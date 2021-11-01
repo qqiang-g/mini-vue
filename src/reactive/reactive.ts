@@ -1,4 +1,4 @@
-import { tarck } from './effect'
+import { tarck, trigger } from './effect'
 export function reactive (data) {
   // const newData = {}
   // return newData
@@ -12,6 +12,7 @@ export function reactive (data) {
     set(target, key, value) {
       const res = Reflect.set(target, key, value)
       // 触发依赖
+      trigger(target, key)
       return res
     }
   })

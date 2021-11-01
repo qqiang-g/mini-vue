@@ -30,6 +30,18 @@ export function tarck (target, key) {
   }
   dep.add(activeEffect)
 };
+
+export function trigger (target, key) {
+  let depsMap = targetMap.get(target) // 获取target的依赖
+  let dep = depsMap.get(key) 
+  for (const effect of dep) {
+    effect.run()
+    
+  }
+}
+
+
+
 export function effect (fn) {
 
   const _effecrt = new ReactiveEffect(fn)

@@ -7,9 +7,9 @@ describe('reactive', () => {
       age: 25
     })
     let nextAge = undefined;
-    effect(()=>{
-      nextAge = user.age
-    })
+    // effect(()=>{
+    //   nextAge = user.age
+    // })
     const sourceDate = { count: 1 }
     const data = reactive(sourceDate)
     

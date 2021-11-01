@@ -26,7 +26,9 @@ export function tarck (target, key) {
   let dep = depsMap.get(key)
   if(!dep){
     dep = new Set()
+    depsMap.set(dep)
   }
+  dep.add(activeEffect)
 };
 export function effect (fn) {
 
